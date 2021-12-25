@@ -7,18 +7,24 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@radial-color-picker/vue-color-picker": "^5.0.1",
+    "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "register-service-worker": "^1.7.1",
+    "reinvented-color-wheel": "^0.4.0",
+    "socket.io-client": "^4.4.0",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "vue-color-picker-wheel": "^0.4.3",
+    "vue-cookies": "^1.7.4",
+    "vue-router": "^4.0.0-0",
+    "vue-socket.io": "^3.0.10",
+    "vue3-colorpicker": "^2.0.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-pwa": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "axios": "^0.18.0",
-    "vue-cli-plugin-axios": "~0.0.4"
+    "@vue/compiler-sfc": "^3.0.0"
   }
 }

@@ -2,11 +2,18 @@
   <div id="nav">
     <router-link to="/">Home</router-link> | 
     <router-link to="/login">Log in</router-link> | 
-    <router-link to="/dashboard">Dashboard</router-link>
-    <!-- <router-link to="/about">About</router-link> -->
+    <router-link to="/dashboard">Dashboard</router-link> | 
+    <router-link to="/about">About</router-link>
+    <router-view/>
   </div>
-  <router-view/>
 </template>
+
+<script>
+export default {
+  setup() {
+  },
+}
+</script>
 
 <style>
 #app {

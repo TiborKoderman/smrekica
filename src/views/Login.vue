@@ -1,25 +1,51 @@
 <template>
-  <form action="" method="post">
-      <table class="form-table">
-          <tr><td class="input-field-label">USERNAME: </td><td><input class="input-field" type="text" placeholder="Username" v-model="username"></td></tr>
-          <tr><td class="input-field-label">PASSWORD: </td><td><input class="input-field" type="text" placeholder="Password" v-model="password"></td></tr>
-          <!-- <tr><td colspan="2" v-if="'/[a-z]/'.test(str)"></td>contains lowercase</tr> -->
-          <tr><td colspan="2">Not registered yet? register<a href="/register" style="color:green;margin:10px;">here</a></td></tr>
-          <tr><td colspan="2" style="text-align: center"><input class="rbutton" type="submit" value="Log in"></td></tr>
-      </table>      
-  </form>
+    <div class="login">
+        <form action="" method="post" v-on:submit.prevent="submitForm">
+            <table class="form-table">
+                <tr><td class="input-field-label">USERNAME: </td><td><input class="input-field" type="text" placeholder="Username" v-model="form.username"></td></tr>
+                <tr><td class="input-field-label">PASSWORD: </td><td><input class="input-field" type="text" placeholder="Password" v-model="form.password"></td></tr>
+                <!-- <tr><td colspan="2" v-if="'/[a-z]/'.test(str)"></td>contains lowercase</tr> -->
+                <tr><td colspan="2">Not registered yet? register<a href="/register" style="color:green;margin:10px;">here</a></td></tr>
+                <tr><td colspan="2" style="text-align: center"><input class="rbutton" type="submit" value="Log in"></td></tr>
+            </table>      
+        </form>
+        {{info}}
+    </div>
 </template>
 
 <script>
+import axios from 'axios'
+
+
 export default {
     data: function(){
         return {
-            username: "",
-            password: ""
+            form: {
+                username: "",
+                password: "",
+                info:""
+                }
         }
     },
     mounted(){
-        axios.get
+        axios
+        .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+        .then(response => (this.info = response))
+        console.log(this.info)
+    },
+    methods: {
+        submitForm() {
+            axios
+            .post("/api/login",this.form)
+            .then(response => {
+                console.log(`logged in`);
+                router.push(`/dashboard`)
+            })
+            .catch(errors=>{
+                console.log(`could not login`)
+            })    
+
+        }
     }
 }
 </script>

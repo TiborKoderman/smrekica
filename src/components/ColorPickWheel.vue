@@ -22,13 +22,13 @@ export default {
         }
     },
     mounted(){
-        var colorCanvas = document.getElementById('color_canvas');
-        var ColorCtx = colorCanvas.getContext('2d');
-        let gradientV = ColorCtx.createLinearGradient(0,0,0,300);
-        gradientV.addColorStop(0,'rgba(0,0,0,0)');
-        gradientV.addColorStop(1, '#000');
-        ColorCtx.fillStyle=gradientV;
-        ColorCtx.fillRect(0,0, ColorCtx.canvas.width, colorCtx.canvas.height);
+        // var colorCanvas = document.getElementById('color_canvas');
+        // var ColorCtx = colorCanvas.getContext('2d');
+        // let gradientV = ColorCtx.createLinearGradient(0,0,0,300);
+        // gradientV.addColorStop(0,'rgba(0,0,0,0)');
+        // gradiennt_{-2}^2 \left(3 x^2-6 x-1\right) \, dxtV.addColorStop(1, '#000');
+        // ColorCtx.fillStyle=gradientV;
+        // ColorCtx.fillRect(0,0, ColorCtx.canvas.width, colorCtx.canvas.height);
     }
 }
 </script>
